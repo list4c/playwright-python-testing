@@ -4,7 +4,7 @@ from pages.base_page import BasePage
 from pages.locators import MainPageLocators
 
 
-class StxMainPage(BasePage):
+class MainPage(BasePage):
     URL = "/"
 
     def __init__(self, page: Page) -> None:

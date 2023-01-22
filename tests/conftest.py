@@ -1,8 +1,8 @@
 import pytest
 from playwright.sync_api import Page
 
-from pages.blog import StxBlogPage
-from pages.main import StxMainPage
+from pages.blog import BlogPage
+from pages.main import MainPage
 
 
 @pytest.fixture(scope="session")
@@ -17,10 +17,10 @@ def browser_context_args(browser_context_args):
 
 
 @pytest.fixture
-def stx_page(page: Page):
-    return StxMainPage(page)
+def main_page(page: Page):
+    return MainPage(page)
 
 
 @pytest.fixture
 def blog_page(page: Page):
-    return StxBlogPage(page)
+    return BlogPage(page)

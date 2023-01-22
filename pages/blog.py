@@ -5,12 +5,12 @@ from pages.elements import SearchInput
 from pages.locators import BlogPageLocators
 
 
-class StxBlogPage(BasePage):
+class BlogPage(BasePage):
     URL = "/blog"
     search_input = SearchInput(BlogPageLocators.SEARCH_INPUT)
 
     def __init__(self, page: Page) -> None:
-        super(StxBlogPage, self).__init__(page)
+        super(BlogPage, self).__init__(page)
         self.search_submit = page.locator(BlogPageLocators.SEARCH_SUBMIT)
         self.get_searched_posts = page.locator(BlogPageLocators.POSTS)
 
