@@ -1,13 +1,11 @@
 from playwright.sync_api import Page
 
+from pages.base_page import BasePage
 
-class STXMainPage:
-    URL = '/'
+
+class StxMainPage(BasePage):
+    URL = "/"
 
     def __init__(self, page: Page) -> None:
-        self.page = page
+        super(StxMainPage, self).__init__(page)
         self.blog_button = page.get_by_role("menuitem", name="Blog").nth(0)
-
-
-    def load(self) -> None:
-        self.page.goto(self.URL)
