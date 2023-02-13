@@ -1,7 +1,7 @@
 from playwright.sync_api import expect
 
-from pages.blog import BlogPage
-from pages.main import MainPage
+from pages.page_objects.blog_page import BlogPage
+from pages.page_objects.main_page import MainPage
 
 
 def test_blog_page_and_filter_articles(main_page: MainPage, blog_page: BlogPage):

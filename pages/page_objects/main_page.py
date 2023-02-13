@@ -1,7 +1,7 @@
 from playwright.sync_api import Page
 
-from pages.base_page import BasePage
-from pages.locators import MainPageLocators
+from pages.page_objects.base_page import BasePage
+from pages.locators.main_page_locators import MainPageLocators
 
 
 class MainPage(BasePage):
