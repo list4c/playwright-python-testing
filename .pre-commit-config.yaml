@@ -1,0 +1,47 @@
+fail_fast: false
+default_stages: [commit, manual]
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-ast
+      - id: check-merge-conflict
+        args: ["--assume-in-merge"]
+      - id: debug-statements
+        name: pdb_debug-statements
+      - id: trailing-whitespace
+        types: [python]
+      - id: end-of-file-fixer
+        types: [python]
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black"]
+
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
+        additional_dependencies:
+          - click==8.0.0
+
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.9.2
+    hooks:
+    -   id: flake8
+        additional_dependencies:
+            - flake8-string-format==0.3.0
+            - flake8-comprehensions==3.8.0
+            - flake8-builtins==1.5.3
+            - flake8-bugbear==22.3.20
+            - flake8-print==4.0.0
+            - flake8-pytest-style==1.6.0
+            - flake8-simplify==0.18.1
+            - flake8-implicit-str-concat==0.3.0
+        args:
+          - "--max-line-length=88"

@@ -1,8 +1,8 @@
-from playwright.sync_api import Page, Locator
+from playwright.sync_api import Locator, Page
 
-from pages.page_objects.base_page import BasePage
 from pages.elements import TextInput
 from pages.locators.blog_page_locators import BlogPageLocators
+from pages.page_objects.base_page import BasePage
 
 
 class BlogPage(BasePage):

@@ -12,15 +12,15 @@ def browser_context_args(browser_context_args):
         "viewport": {
             "width": 1920,
             "height": 1080,
-        }
+        },
     }
 
 
-@pytest.fixture
+@pytest.fixture()
 def main_page(page: Page):
     return MainPage(page)
 
 
-@pytest.fixture
+@pytest.fixture()
 def blog_page(page: Page):
     return BlogPage(page)

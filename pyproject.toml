@@ -2,7 +2,6 @@
 name = "stx-blog"
 version = "0.1.0"
 description = ""
-authors = ["Bartosz Brozyna <bartosz.brozyna@stxnext.pl>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -10,6 +9,7 @@ python = "^3.11"
 pytest = "^7.2.0"
 pytest-playwright = "^0.3.0"
 pytest-base-url = "^2.0.0"
+pre-commit = "^3.0.4"
 
 
 [build-system]

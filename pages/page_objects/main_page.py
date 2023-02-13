@@ -1,7 +1,7 @@
 from playwright.sync_api import Page
 
-from pages.page_objects.base_page import BasePage
 from pages.locators.main_page_locators import MainPageLocators
+from pages.page_objects.base_page import BasePage
 
 
 class MainPage(BasePage):
@@ -9,8 +9,12 @@ class MainPage(BasePage):
 
     def __init__(self, page: Page) -> None:
         super().__init__(page)
-        self.blog_btn = page.locator(MainPageLocators.HEADER_LINK).filter(has_text="Blog")
-        self.accept_cookies_btn = page.get_by_role(**MainPageLocators.BUTTON_ACCEPT_COOKIES)
+        self.blog_btn = page.locator(MainPageLocators.HEADER_LINK).filter(
+            has_text="Blog"
+        )
+        self.accept_cookies_btn = page.get_by_role(
+            **MainPageLocators.BUTTON_ACCEPT_COOKIES
+        )
 
     def open_blog(self) -> None:
         self.blog_btn.click()

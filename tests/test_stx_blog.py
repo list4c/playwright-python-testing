@@ -5,8 +5,10 @@ from pages.page_objects.main_page import MainPage
 
 
 def test_blog_page_and_filter_articles(main_page: MainPage, blog_page: BlogPage):
-    expected_link = "Moderated and Unmoderated Remote Usability Testing: What Is It, How to Run It, and " \
-                    "What Are the Benefits?"
+    expected_link = (
+        "Moderated and Unmoderated Remote Usability Testing: "
+        "What Is It, How to Run It, and What Are the Benefits? "
+    )
     search_query = "test"
 
     main_page.load()
