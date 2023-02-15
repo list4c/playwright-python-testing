@@ -1,6 +1,5 @@
-# super-secret-playwright-task
+# Playwright UI Test Example
 
-TOP SECRET, has nothing to do with recruitment!! Not at all!!!
 
     Very interesting description
 
