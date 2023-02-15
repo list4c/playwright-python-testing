@@ -12,12 +12,3 @@ class MainPage(BasePage):
         self.blog_btn = page.locator(MainPageLocators.HEADER_LINK).filter(
             has_text="Blog"
         )
-        self.accept_cookies_btn = page.get_by_role(
-            **MainPageLocators.BUTTON_ACCEPT_COOKIES
-        )
-
-    def open_blog(self) -> None:
-        self.blog_btn.click()
-
-    def accept_cookies(self) -> None:
-        self.accept_cookies_btn.click()
