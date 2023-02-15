@@ -3,7 +3,6 @@ from playwright.sync_api import Page
 
 from pages.page_objects.blog_page import BlogPage
 from pages.page_objects.main_page import MainPage
-from pages.blog_page import StxBlogPage
 
 
 @pytest.fixture(scope="session")
@@ -24,4 +23,4 @@ def main_page(page: Page):
 
 @pytest.fixture()
 def blog_page(page: Page):
-    return StxBlogPage(page)
+    return BlogPage(page)
