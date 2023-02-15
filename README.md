@@ -1,18 +1,24 @@
 # Playwright UI Test Example
 
-## Installation using pipenv
 
-### Starting environment
+    Very interesting description
 
-`pipenv shell`
+### Installation using poetry
 
-### Installing dependencies
+#### Starting environment
 
-`pipenv install`
+```commandline
+poetry shell
+```
 
-### Running tests
+#### Installing dependencies
 
-`pipenv run python3 -m pytest --headed`
+```commandline
+poetry install
+```
 
+#### Running tests
 
-
+```commandline
+poetry run pytest --headed
+```
