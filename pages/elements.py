@@ -3,4 +3,6 @@ class TextInput:
         self.locator = locator
 
     def __set__(self, obj, value):
-        obj.page.locator(self.locator).type(value)
+        text_input = obj.page.locator(self.locator)
+        text_input.clear()
+        text_input.fill(value)
