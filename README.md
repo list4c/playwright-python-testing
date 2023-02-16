@@ -155,11 +155,40 @@ Here is an example of running 5 parallel sessions on 3 browsers
 
     pytest --base-url https://www.stxnext.com -n 5 --browser chromium --browser firefox --browser webkit
 
+#### Artifacts
+
+Playwright comes with video recording and screen capturing out of the box. The results are saved in test-results
+directory by default.
+
+    pytest --screenshot={on,off,only-on-failure}
+
+    pytest --video={on,off,retain-on-failure}
+
 ## REPL
 
-## Debugging
+Sometimes it's convenient to control the browser in interactive session in your python console. To run Playwright
+without Pytest, try this snippet
+
+```python
+from playwright.sync_api import sync_playwright
+
+playwright = sync_playwright().start()
+# Use playwright.chromium, playwright.firefox or playwright.webkit
+# Pass headless=False to launch() to see the browser UI
+browser = playwright.chromium.launch(headless=False)
+page = browser.new_page()
+page.goto("https://www.stxnext.com")
+page.screenshot(path="example.png")
+browser.close()
+playwright.stop()
+```
 
 ## GitHub Actions
+
+The purpose of Continuous integration in this repo is to:
+
+1. Validate created Pull Requests - confirm the pre-commit and test are passing
+2. Create a template for regularly launched tasks that will Test the targeted environment
 
 ## License
 
