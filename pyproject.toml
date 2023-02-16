@@ -1,6 +1,7 @@
 [tool.poetry]
 name = "stx-blog"
 version = "0.1.0"
+authors = [""]
 description = ""
 readme = "README.md"
 
@@ -10,6 +11,8 @@ pytest = "^7.2.0"
 pytest-playwright = "^0.3.0"
 pytest-base-url = "^2.0.0"
 pre-commit = "^3.0.4"
+pytest-xdist = "^3.2.0"
+playwright = "^1.30.0"
 
 
 [build-system]
