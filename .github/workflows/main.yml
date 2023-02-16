@@ -21,7 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install poetry
           poetry install
-           poetry run playwright install
+          poetry run playwright install
 
       - name: pre-commit
         run: |
