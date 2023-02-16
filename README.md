@@ -2,21 +2,100 @@
 
 ## About
 
+The purpose of this repo is to create a structured playground for automating end-to-end tests for the company
+page https://www.stxnext.com. Feel free to contribute and have fun!
+
 ## Project structure
+
+Project implements Page Object Pattern architecture as it's Playwright compliant and nobody ever got fired for using it.
+
+*
+
+* **Lockfile:** Poetry generates a poetry.lock file that ensures that everyone working on the project uses the same set
+  of dependencies with the same versions, which reduces the likelihood of compatibility issues.
+
+* **Packaging:** Poetry makes it easy to package your project for distribution. It generates a pyproject.toml file that
+  describes your project and its dependencies, as well as a source distribution and wheel package that you can
+  distribute to others.
+
+* **Integration with other tools:** Poetry integrates with other tools, such as Pytest and Flake8, to help you manage
+  your project's dependencies and testing.
 
 ## Installation
 
+[Poetry](https://python-poetry.org/) is a dependency management and packaging tool for Python that helps you manage your
+project's dependencies and
+build your project. It's similar to pip, but provides additional features and benefits.
+
+* **Dependency management:** Poetry provides version constraints, installation and updating of packages, and virtual
+  environment management.
+
+* **Lockfile:** Poetry generates a poetry.lock file that ensures that everyone working on the project uses the same set
+  of dependencies with the same versions
+
+* **Packaging:** Poetry generates a pyproject.toml file that
+  describes your project and its dependencies, as well as a source distribution and wheel package that you can
+  distribute to others.
+
+* **Integration with other tools:** Poetry integrates with other tools, such as Pytest and Flake8, to help you manage
+  your project's dependencies and testing.
+
 ### Installation using poetry
+
+#### Installing Poetry
+
+Poetry can be installed via python standard package manager PIP
+
+    pip install poetry
 
 #### Starting environment
 
+To spawn poetry session inside your environment, write
+
     poetry shell
 
+> This command starts a new shell and activates the virtual environment.
+> As such, exit should be used to properly exit the shell and the virtual environment instead of deactivate.
+
+#### Adding dependencies
+
+To add a new dependency to your project, use the add command:
+
+    poetry add <package>
+
+This will add the requests package to your project and update the pyproject.toml file.
+
 #### Installing dependencies
+
+To install dependencies defined in `pyproject.toml`, simply run
 
     poetry install
 
 ### Pre-commit
+
+Pre-commit is a framework used for pre-commits git hooks management. It allows to define actions that confirm that
+written code is formatted and configured properly according to defined practices.
+
+**TLDR** you cannot commit stuff unless it's green and your code fits the language guidelines
+like [PEP8](https://peps.python.org/pep-0008/)
+
+#### Running pre-commit automatically
+
+To run validation automatically before each commit, please use:
+
+    pre-commit install
+
+This will add pre-commit to git hooks and perform all the checks defined in `.pre-commit-config.yaml`
+
+#### Running pre-commit manually
+
+To check stying in all files, please use
+
+    pre-commit run -a
+
+#### pre-commit in CI
+
+Every pull request should pass pre-commit stage to be merged
 
 ## Running tests
 
@@ -58,19 +137,21 @@ def test_something(pytestconfig) -> None:
 ```
 
 ### Running Tests on Specific Browsers
+
 To run tests on specific browsers, use the Pytest command with the --browser option:
 
     pytest --browser firefox
 
 This will run tests on Firefox. You can also specify multiple browsers:
-    
-    pytest --browser firefox --browser chromium
 
+    pytest --browser firefox --browser chromium
 
 ### Other running options
 
 #### Parallel execution
-This repo uses pytest-xdist to allow multiple 
+
+This repo uses `pytest-xdist` package to allow multiple test being performed in parallel.
+Here is an example of running 5 parallel sessions on 3 browsers
 
     pytest --base-url https://www.stxnext.com -n 5 --browser chromium --browser firefox --browser webkit
 
@@ -80,5 +161,8 @@ This repo uses pytest-xdist to allow multiple
 
 ## GitHub Actions
 
-## Licensing
+## License
 
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](hhttps://github.com/bbrozyna/light-propagation/blob/master/LICENSE)
+
+This project is licensed under the terms of the [MIT license](/LICENSE).
