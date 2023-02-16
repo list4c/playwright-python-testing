@@ -9,17 +9,14 @@ page https://www.stxnext.com. Feel free to contribute and have fun!
 
 Project implements Page Object Pattern architecture as it's Playwright compliant and nobody ever got fired for using it.
 
-*
+* **tests:** definition of test suites and scenarios
 
-* **Lockfile:** Poetry generates a poetry.lock file that ensures that everyone working on the project uses the same set
-  of dependencies with the same versions, which reduces the likelihood of compatibility issues.
-
-* **Packaging:** Poetry makes it easy to package your project for distribution. It generates a pyproject.toml file that
-  describes your project and its dependencies, as well as a source distribution and wheel package that you can
-  distribute to others.
-
-* **Integration with other tools:** Poetry integrates with other tools, such as Pytest and Flake8, to help you manage
-  your project's dependencies and testing.
+* **conftest.py:** allows you to define fixtures, plugins, and hooks that can be shared across multiple test files in a
+  subdirectories.
+* **pages:** main project library combines pages construction and behaviour in `page_objects`, pages locator
+  definition and generation in `locators` and common elements like navbars or textinputs in `elements`.
+* **pytest.ini** is a configuration file for Pytest that allows you to set options and modify the behavior of Pytest for
+  a specific project.
 
 ## Installation
 
