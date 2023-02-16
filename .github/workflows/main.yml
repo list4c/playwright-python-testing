@@ -24,7 +24,7 @@ jobs:
 
       - name: pre-commit
         run: |
-          pre-commit run -a
+          poetry run pre-commit run -a
 
       - name: pytest check
         run: |
