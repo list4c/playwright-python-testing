@@ -11,13 +11,24 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Install Poetry
         run: pip install poetry
+
       - name: Setup python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
           cache: 'poetry'
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/poetry.lock') }}-${{ hashFiles('**/playwright.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
       - name: Install dependencies
         run: |
           poetry install
