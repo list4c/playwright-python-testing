@@ -86,7 +86,7 @@ This will add pre-commit to git hooks and perform all the checks defined in `.pr
 
 #### Running pre-commit manually
 
-To check stying in all files, please use
+To check stying in all files, please use:
 
     pre-commit run -a
 
@@ -102,7 +102,7 @@ This project uses `pytest` with `pytest-playwright` as a test runner.
 
 #### Running all
 
-To run all the scripts with default setting simply type
+To run all the scripts with default setting simply type:
 
     pytest
 
@@ -148,7 +148,7 @@ This will run tests on Firefox. You can also specify multiple browsers:
 #### Parallel execution
 
 This repo uses `pytest-xdist` package to allow multiple test being performed in parallel.
-Here is an example of running 5 parallel sessions on 3 browsers
+Here is an example of running 5 parallel sessions on 3 browsers:
 
     pytest --base-url https://www.stxnext.com -n 5 --browser chromium --browser firefox --browser webkit
 
