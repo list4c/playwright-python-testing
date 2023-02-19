@@ -2,6 +2,7 @@ import pytest
 from playwright.sync_api import Page
 
 from pages.page_objects.blog_page import BlogPage
+from pages.page_objects.main_page import MainPage
 from pages.page_objects.navbar import Navbar
 
 
@@ -24,3 +25,8 @@ def navbar(page: Page):
 @pytest.fixture()
 def blog_page(page: Page):
     return BlogPage(page)
+
+
+@pytest.fixture()
+def main_page(page: Page):
+    return MainPage(page)
