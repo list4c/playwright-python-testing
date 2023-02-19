@@ -13,3 +13,7 @@ class BasePage:
 
     def accept_cookies(self):
         self.cookie_consent_button.click()
+
+    def load_and_accept_cookies(self):
+        self.load()
+        self.accept_cookies()

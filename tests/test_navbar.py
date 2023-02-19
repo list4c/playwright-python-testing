@@ -16,8 +16,7 @@ def test_navbar_correct_links(navbar: Navbar, pytestconfig: pytest.Config) -> No
     }
     menu_links.add("https://career.stxnext.com")
 
-    navbar.load()
-    navbar.accept_cookies()
+    navbar.load_and_accept_cookies()
 
     assert (
         navbar.header_links.all_inner_texts() == menu_items
@@ -32,8 +31,7 @@ def test_navbar_link_highlighting(navbar: Navbar) -> None:
     tested_page_pattern = re.compile(tested_page.lower())
     expected_css = ("color", "rgb(51, 202, 192)")
 
-    navbar.load()
-    navbar.accept_cookies()
+    navbar.load_and_accept_cookies()
     navbar.go_to_link(tested_page)
     blog_link = navbar.get_link(tested_page)
 
@@ -48,8 +46,7 @@ def test_navbar_search(navbar: Navbar) -> None:
         f".Try rewording your query, or browse through our site."
     )
 
-    navbar.load()
-    navbar.accept_cookies()
+    navbar.load_and_accept_cookies()
     navbar.search_phrase(search_query)
 
     expect(navbar.search_results).to_contain_text(expected_search_results)
