@@ -39,3 +39,17 @@ def test_navbar_link_highlighting(navbar: Navbar) -> None:
 
     expect(blog_link).to_have_css(*expected_css)
     expect(navbar.page).to_have_url(tested_page_pattern)
+
+
+def test_navbar_search(navbar: Navbar) -> None:
+    search_query = "asdfg"
+    expected_search_results = (
+        f"Sorry. There were no results for “{search_query}”"
+        f".Try rewording your query, or browse through our site."
+    )
+
+    navbar.load()
+    navbar.accept_cookies()
+    navbar.search_phrase(search_query)
+
+    expect(navbar.search_results).to_contain_text(expected_search_results)
