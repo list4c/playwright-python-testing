@@ -9,6 +9,4 @@ class MainPage(BasePage):
 
     def __init__(self, page: Page) -> None:
         super().__init__(page)
-        self.blog_btn = page.locator(MainPageLocators.HEADER_LINK).filter(
-            has_text="Blog"
-        )
+        self.banner_title = self.page.locator(MainPageLocators.BANNER_TITLE)

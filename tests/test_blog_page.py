@@ -9,8 +9,7 @@ def test_blog_page_and_filter_articles(blog_page: BlogPage):
     )
     search_query = "test"
 
-    blog_page.load()
-    blog_page.accept_cookies()
+    blog_page.load_and_accept_cookies()
     blog_page.search_articles(search_query)
 
     expect(blog_page.main_popup).to_be_visible()
