@@ -1,2 +1,2 @@
 class MainPageLocators:
-    BANNER_TITLE = ".bannerTitle"
+    BANNER_TITLE = '.bannerTitle'
