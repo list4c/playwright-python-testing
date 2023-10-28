@@ -5,9 +5,9 @@ from pages.page_objects.blog_page import BlogPage
 
 def test_blog_page_and_filter_articles(blog_page: BlogPage):
     article_title = (
-        "The Business Manager’s Guide to Software Testing and Quality Assurance"
+        'The Business Manager’s Guide to Software Testing and Quality Assurance'
     )
-    search_query = "test"
+    search_query = 'test'
 
     blog_page.load_and_accept_cookies()
     blog_page.search_articles(search_query)

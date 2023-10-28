@@ -9,20 +9,20 @@ from pages.page_objects.base_page import BasePage
 
 @dataclasses.dataclass
 class NavbarMenuOptions:
-    SERVICES: str = "Services"
-    PORTFOLIO: str = "Portfolio"
-    TEAM: str = "Team"
-    RESOURCES: str = "Resources"
-    CAREERS: str = "Careers"
-    BLOG: str = "Blog"
-    CONTACT: str = "Contact"
+    SERVICES: str = 'Services'
+    PORTFOLIO: str = 'Portfolio'
+    TEAM: str = 'Team'
+    RESOURCES: str = 'Resources'
+    CAREERS: str = 'Careers'
+    BLOG: str = 'Blog'
+    CONTACT: str = 'Contact'
 
     def get_all_texts(self):
         return dataclasses.astuple(self)
 
 
 class Navbar(BasePage):
-    URL = "/"
+    URL = '/'
     search_input = TextInput(NavbarLocators.SEARCH_INPUT)
 
     def __init__(self, page: Page) -> None:
@@ -34,7 +34,7 @@ class Navbar(BasePage):
 
     def get_navbar_links_formatted(self):
         headers = self.header_links.all()
-        return {header.get_attribute("href").rstrip("/") for header in headers}
+        return {header.get_attribute('href').rstrip('/') for header in headers}
 
     def search_phrase(self, phrase):
         self.search_toggle.click()
