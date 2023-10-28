@@ -8,6 +8,7 @@ class BasePage:
 
     def __init__(self, page: Page) -> None:
         self.page = page
+
         self.cookie_consent_button = page.locator(BasePageLocators.COOKIE_ALLOW_ALL)
 
     def load(self) -> None:
