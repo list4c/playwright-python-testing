@@ -6,7 +6,7 @@ class BasePage:
 
     def __init__(self, page: Page) -> None:
         self.page = page
-        self.cookie_consent_button = page.get_by_role("button", name="Accept")
+        self.cookie_consent_button = page.locator('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelectionWrapper #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll')
 
     def load(self) -> None:
         self.page.goto(self.URL)
